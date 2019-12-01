@@ -1,0 +1,66 @@
+@charset "UTF-8";
+*{
+	padding:0px;
+	margin:0px
+}
+
+#box {
+	margin: 0 auto;
+	width: 1213px;
+	height: auto;
+	opacity: 0.9;
+}
+#head{
+	color:orange;
+	font-size:30px;
+	padding:30px;
+	
+}
+
+
+#massage{
+	margin-top:30px;
+	 background-color:#d6c929;
+	 width:500px;
+	 height:auto;
+	 border:1px;
+	 border-radius: 3px;
+}
+#massage div{
+	padding:15px 0px; 
+	font-size: 20px
+}
+#massage div input{
+	width:200px;
+	height:25px;
+}
+
+#sex{
+	padding-left:100px;
+	width:400px;
+	height:80px;
+	
+}
+#massage #sex input{
+	width:100px;
+	height:20px;
+	
+}
+
+
+#massage #sex div{
+	width:200px;
+	float:left;
+}
+#birthday{
+	height:30px;
+}
+#birthday input{
+	font-size: 21px;
+}
+textarea{
+	font-size: 21px;
+}
+ul li{
+	list-style-type: none;
+}

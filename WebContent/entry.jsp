@@ -12,7 +12,7 @@
 </head>
 <body>
 	<!-- particles.js container -->
-		<div id="particles-js" style="display: flex;align-items: center;justify-content: center">
+		<div id="particles-js" style=";align-items: center;justify-content: center">
 		</div>
 		<div class="login-page">
 			<div class="login-content">

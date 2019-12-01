@@ -3,16 +3,27 @@
 	margin: 0px;
 }
 body{
-	background-image:	url(../img/ppp.jpg);
+	
+	
 	background-attachment: fixed;
 	background-size: cover;
 	width: 100%;
+}
+#bg{
+	position: absolute;
+	top:0px;
+	left:0px;
+	z-index: -100;
+	
+}
+#bg img{
+	width: 1903px
 }
 #box {
 	margin: 0 auto;
 	width: 1213px;
 	height: auto;
-	opacity: 0.8;
+	opacity: 0.9;
 }
 #box a:hover {
 	color: #CCA459;
@@ -67,6 +78,7 @@ body{
 	height: 90px;
 }
 #top2 #top2_left #logo{
+	
 	margin-top: 30px;
 	width: 200px;
 	height: 70px;
@@ -173,6 +185,7 @@ form #buttum {
 
 /*top3*/
 #top3 {
+	background-color: #FFFFFF;
 	height: 451px;
 }
 #top3 div {
@@ -229,19 +242,19 @@ form #buttum {
 	font-size: 18px;
 }
 #top3 ul li .b a {
-	color: #EEEEEE;
+	color: #4a4a4a;
 	text-decoration: none;
 }
 #top3 ul li .c {
 	font-size: 13px;
-	color: #bbbbbb;
+	color: #4a4a4a;
 	float: right;
 }
 #top3 ul li .c a {
 	position: relative;
 	top: 3px;
 	text-decoration: none;
-	color: #bbbbbb;
+	color: #4a4a4a;
 }
 #top3_left ul .d:hover{
 	background-color: #eeeeee;
@@ -364,6 +377,7 @@ form #buttum {
 
 /*top5*/
 #top5{
+	background-color:#ffffff;
 	height: 396px;
 	box-shadow: 0px 0px 15px yellow;
 }

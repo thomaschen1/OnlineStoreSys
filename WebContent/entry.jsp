@@ -16,7 +16,7 @@
 		</div>
 		<div class="login-page">
 			<div class="login-content">
-				<div class="login-tit">登录</div>
+				<div class="login-tit">注册</div>
 				<div class="login-input">
 					<input id="userName" type="text" placeholder="用户名">
 				</div>
@@ -26,19 +26,16 @@
 				</div>
 				<div class="login-btn">
 					<div class="login-btn-left">
-						<span id="login">登录</span>
+						<span id="login">注册</span>
 					</div>
 					<div class="login-btn-right" onClick="changeImg()">
-						<img src="img/check.png" alt="" id="picture"> 记住密码
+						<img src="img/check.png" alt="" id="picture"> 注册店主
 					</div>
 				</div>
 			</div>
 		</div>
 
-		<script src="./js/jquery.min.js"></script>
-		<script src="./js/bootstrap.min.js"></script>
-		<!-- 自定义前后端交互代码 -->
-		<script src="jquerys/sign-login.js"></script>
+		
 		<!-- scripts -->
 		<script src="js/particles.js"></script>
 		<script src="js/app.js"></script>

@@ -6,11 +6,15 @@
 		<meta charset="utf-8" />
 		<link rel="icon" href="img/未标题-1.png">
 		<link rel="stylesheet" type="text/css" href="./css/main.css" />
+		
 		<!-- <link rel="stylesheet" type="text/css" href="css/new_file%20(2).css" /> -->
-		<title>logo制作</title>
+		<title>网店系统</title>
 </head>
 <body>
 <body onload="a()">
+
+		<span id="bg"><img alt="" src="./img/bg.gif"></span>
+		
 		<div id="top1" align="center">
 			<!-- 最上面的信息，显示登录注册，可在此切换到登录注册画面-->
 			<div id="whith">
@@ -281,8 +285,9 @@
 						<a href="index.html"><img src="img/LOGO%20(5).png" class="img"></a>
 					</div>
 				</div>
-				<div id="top4">
-					<!-- 热门商品导航栏 -->
+				
+				<div id="top4"><!-- 热门商品导航栏 -->
+					
 
 					<div id="top4_left">
 						&nbsp;&nbsp;热门素材

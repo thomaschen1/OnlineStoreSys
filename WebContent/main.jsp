@@ -167,11 +167,11 @@
 								<div class="b">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href=""
 									 name="">私人订制</a></div>
 								<div class="top3_center_hidden">
-									<img src="img/二维码sheng.jpg" class="二维码" id="sheng">
+									<img src="img/二维码sheng.jpg" class="p2" id="sheng">
 									<img src="img/top5-img%20(1).png" class="hiddent-img">
-									<img src="img/二维码xin.jpg" class="二维码" id="xin">
-									<img src="img/二维码（3）%20(1).jpg" class="二维码" id="run">
-									<img src="img/二维码（3）%20(2).jpg" class="二维码" id="chao">
+									<img src="img/二维码xin.jpg" class="p2" id="xin">
+									<img src="img/二维码（3）%20(1).jpg" class="p2" id="run">
+									<img src="img/二维码（3）%20(2).jpg" class="p2" id="chao">
 								</div>
 							</li>
 						</ul>

@@ -99,9 +99,9 @@ position: absolute;
 top: 0;
 left: 0;
 }
-.login-content{
+#login_content{
   width: 400px;
-  height: 280px;
+  height: 350px;
   margin: 0 auto;
   position: relative;
   top: 200px;
@@ -109,6 +109,29 @@ left: 0;
    background: rgba(40, 144, 250, 0.2);
    border-radius: 5px;
 }
+#shopkeeperMassage{
+	display:none;
+}
+
+
+#login_content_show{
+  width: 400px;
+  height: 520px;
+  margin: 0 auto;
+  position: relative;
+  top: 200px;
+   border: 1px solid #2890fa;
+   background: rgba(40, 144, 250, 0.2);
+   border-radius: 5px;
+}
+#shopkeeperMassage_show{
+	display:block;
+}
+
+textarea{
+	font-size: 21px;
+}
+
 .login-tit{
 background: rgba(0, 0, 0, 0.8);
 border: 1px solid #2890fa;
@@ -122,7 +145,7 @@ font-size: 18px
 width: 90%;
 margin: 30px auto 0 auto;
 }
-.login-input input{
+.login-input input,textarea{
    background: rgba(0, 0, 0, 0);
    border: 0;
    height: 30px;

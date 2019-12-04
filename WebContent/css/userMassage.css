@@ -1,14 +1,18 @@
 @charset "UTF-8";
 *{
 	padding:0px;
-	margin:0px
+	margin:0px;
 }
-
+body{
+	background: url("../img/bg.gif");
+	background-size: cover;
+}
 #box {
 	margin: 0 auto;
 	width: 1213px;
 	height: auto;
 	opacity: 0.9;
+	
 }
 #head{
 	color:orange;
@@ -20,11 +24,11 @@
 
 #massage{
 	margin-top:30px;
-	 background-color:#d6c929;
+	 background-color:#63b5fe;
 	 width:500px;
 	 height:auto;
-	 border:1px;
 	 border-radius: 3px;
+	 border: 2px solid #0000ff;
 }
 #massage div{
 	padding:15px 0px; 
@@ -58,9 +62,13 @@
 #birthday input{
 	font-size: 21px;
 }
-textarea{
-	font-size: 21px;
-}
+
 ul li{
 	list-style-type: none;
+}
+
+#submit #massage_input{
+	width: 120px;
+	height: 30px;
+	font-size: 20px;
 }

@@ -12,6 +12,7 @@
 	<div id="head"><strong>个人信息</strong></div>
 	
 		<div id="massage" align="center">
+		<form action="">
 			<div>
 				用户名：<input type="text" width="50px"><br>
 			</div>
@@ -29,6 +30,11 @@
 			<div id="birthday">
 				出生年日：<input type="date" width="50px"><br>
 			</div>
+			<div id="submit">
+			<input type="submit" name="massage_input" id="massage_input" value="确   定">
 		</div>
+		</form>
+		</div>
+		
 </body>
 </html>

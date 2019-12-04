@@ -4,32 +4,46 @@
 <html>
 <head>
 		<meta charset="utf-8" />
-		<link rel="icon" href="img/未标题-1.png">
-		<link rel="stylesheet" type="text/css" href="./css/main.css" />
-		
-		<!-- <link rel="stylesheet" type="text/css" href="css/new_file%20(2).css" /> -->
+		<link rel="stylesheet"  href="<%=request.getContextPath()%>/css/main.css" />
 		<title>网店系统</title>
 </head>
 <body>
 <body onload="a()">
 
 		<span id="bg"><img alt="" src="./img/bg.gif"></span>
-		
+
 		<div id="top1" align="center">
 			<!-- 最上面的信息，显示登录注册，可在此切换到登录注册画面-->
 			<div id="whith">
 				<div id="top1_left">
 					Hi,欢迎来到网店购物&nbsp;&nbsp;
-					<a href="entry.jsp" id="into">请登录</a>
+					<span id="span1"><a href="entry.jsp" id="into">请登录</a>
+					<div id="login_hidden" >
+						<form action="">
+							<table>
+							<tr>
+								<td><strong>账号：</strong></td>
+								<td><input type="text" id="login_ID"></td>
+							</tr>
+							<tr>
+								<td><strong>密码：</strong></td>
+								<td><input type="password" id="login_pwd"></td>
+							</tr>
+							
+							</table>
+							<div align="center" id="lg_div">
+								<input type="submit" id="login_submit" value="登录" >
+							</div>
+							
+						</form>
+					</div>
+					</span>
 					<a href="logon.jsp">免费注册</a>
 				</div>
 				<div id="top1_right">
-					<a href="user_assage.jsp">个人中心</a>
-					<img src="img/1543721325(1).jpg"></a>|
-		
-					<a href="index.html">购物车<img src="img/1543721325(1).jpg"></a>|
-					<a href="index.html">订单管理</a>
-					
+					<a href="userMassage.jsp">个人中心</a>|
+					<a href="shopping。jsp">购物车</a>|
+					<a href="order。jsp">订单管理</a>
 				</div>
 			</div>
 
@@ -41,14 +55,14 @@
 					<!-- 搜索栏 -->
 
 					<div id="top2_left">
-						<img src="img/合成-1.gif" id="logo">
+						<img src="./img/logo.gif" id="logo">
 					</div>
 					<div id="top2_search">
 						<form action="" method="">
 							<input type="text" name="search" placeholder="  搜索商品" id="search" />
 							<input type="submit" value="搜索" id="buttum" />
 							<ul>
-							<% String product_name[]={"衣服","shou","爱心","音乐","动漫","泡泡","炫酷流光"}; %>
+							<% String product_name[]={"服装","手机","玩具","乐器","飞机","礼物","电器"}; %>
 								<li><a href="" name=""><%=product_name[0]%></a></li>
 								<li><a href="" name=""><%=product_name[1]%></a></li>
 								<li><a href="" name=""><%=product_name[2]%></a></li>
@@ -87,8 +101,8 @@
 								<div class="c"><img src="img/搜狗截图_2018-12-11_08-54-19.png">&nbsp;</div>
 							</li>
 							<li id="b2" class="d">
-								<div class="b"><a href="" name="">通用素材</a></div>
-								<div class="c"><a href="" name="">花纹</a>/<a href="" name="">流光</a></div>
+								<div class="b"><a href="" name=""><%=product_name[0]%></a></div>
+								<div class="c"><a href="" name="">促销</a>/<a href="" name="">热门</a></div>
 								<div class="top3_center_hidden">
 									<img src="img/TOP5%20-%20(1).png" class="hiddent-img">
 									<img src="img/TOP5%20(6).png" class="hidden-little-img">
@@ -98,8 +112,8 @@
 								</div>
 							</li>
 							<li id="b3" class="d">
-								<div class="b"><a href="" name="">活动图标</a></div>
-								<div class="c"><a href="" name="">LOGO</a>/<a href="" name="">动物</a></div>
+								<div class="b"><a href="" name=""><%=product_name[1]%></a></div>
+								<div class="c"><a href="" name="">促销</a>/<a href="" name="">热门</a></div>
 								<div class="top3_center_hidden">
 									<img src="img/TOP5%20(1).png" class="hiddent-img">
 									<img src="img/TOP5%20-%20(2).png" class="hidden-little-img">
@@ -109,8 +123,8 @@
 								</div>
 							</li>
 							<li id="b4" class="d">
-								<div class="b"><a href="" name="">社团图标</a></div>
-								<div class="c"><a href="" name="">工作室</a>/<a href="" name="">社团</a></div>
+								<div class="b"><a href="" name=""><%=product_name[2]%></a></div>
+								<div class="c"><a href="" name="">促销</a>/<a href="" name="">热门</a></div>
 								<div class="top3_center_hidden">
 									<img src="img/LOGO%20(1).png" class="hiddent-img">
 									<img src="img/LOGO%20(3).png" class="hidden-little-img">
@@ -120,8 +134,8 @@
 								</div>
 							</li>
 							<li id="b5" class="d">
-								<div class="b"><a href="" name="">网页图标</a></div>
-								<div class="c"><a href="" name="">LOGO</a>/<a href="" name="">元素</a></div>
+								<div class="b"><a href="" name=""><%=product_name[3]%></a></div>
+								<div class="c"><a href="" name="">促销</a>/<a href="" name="">热门</a></div>
 								<div class="top3_center_hidden">
 									<img src="img/星光logo.png" class="hiddent-img">
 									<img src="img/未标题-1.png" class="hidden-little-img">
@@ -131,8 +145,8 @@
 								</div>
 							</li>
 							<li id="b6" class="d">
-								<div class="b"><a href="" name="">软件图标</a></div>
-								<div class="c"><a href="" name="">DIY元素</a>/<a href="" name="">流光</a></div>
+								<div class="b"><a href="" name=""><%=product_name[4]%></a></div>
+								<div class="c"><a href="" name="">促销</a>/<a href="" name="">热门</a></div>
 								<div class="top3_center_hidden">
 									<img src="img/TOP5%20-%20(1).png" class="hiddent-img">
 									<img src="img/TOP5%20-%20(6).png" class="hidden-little-img">
@@ -142,8 +156,8 @@
 								</div>
 							</li>
 							<li id="b7" class="d">
-								<div class="b"><a href="" name="">简历图标</a></div>
-								<div class="c"><a href="" name="">LOGO</a>/<a href="" name="">GIF图</a></div>
+								<div class="b"><a href="" name=""><%=product_name[5]%></a></div>
+								<div class="c"><a href="" name="">促销</a>/<a href="" name="">热门</a></div>
 								<div class="top3_center_hidden">
 									<img src="img/top5-img%20(1).png" class="hiddent-img">
 									<img src="img/TOP5%20(5).png" class="hidden-little-img">
@@ -153,8 +167,8 @@
 								</div>
 							</li>
 							<li id="b8" class="d">
-								<div class="b"><a href="" name="">其他</a></div>
-								<div class="c"><a href="" name="">LOGO</a>/<a href="" name="">GIF图</a></div>
+								<div class="b"><a href="" name=""><%=product_name[6]%></a></div>
+								<div class="c"><a href="" name="">促销</a>/<a href="" name="">热门</a></div>
 								<div class="top3_center_hidden">
 									<img src="img/TOP5%20(2).png" class="hiddent-img">
 									<img src="img/TOP5%20-%20(2).png" class="hidden-little-img">
@@ -167,24 +181,24 @@
 								<div class="b">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href=""
 									 name="">私人订制</a></div>
 								<div class="top3_center_hidden">
-									<img src="img/二维码sheng.jpg" class="p2" id="sheng">
+									<img src="img/二维码sheng.jpg" class="b9_p" id="sheng">
 									<img src="img/top5-img%20(1).png" class="hiddent-img">
-									<img src="img/二维码xin.jpg" class="p2" id="xin">
-									<img src="img/二维码（3）%20(1).jpg" class="p2" id="run">
-									<img src="img/二维码（3）%20(2).jpg" class="p2" id="chao">
+									<img src="img/二维码xin.jpg" class="b9_p" id="xin">
+									<img src="img/二维码（3）%20(1).jpg" class="b9_p" id="run">
+									<img src="img/二维码（3）%20(2).jpg" class="b9_p" id="chao">
 								</div>
 							</li>
 						</ul>
 					</div>
 					<div id="top3_top">
 						<ul>
-							<li><a href="">扁平化</a></li>
-							<li><a href="">小清新</a></li>
+							<li><a href="">热门</a></li>
+							<li><a href="">促销</a></li>
+							<li><a href="">好评</a></li>
+							<li><a href="">ACG</a></li>
 							<li><a href="">中国风</a></li>
-							<li><a href="">酷炫风</a></li>
-							<li><a href="">简约风</a></li>
-							<li><a href="">手绘风</a></li>
-							<li><a href="">卡通风</a></li>
+							<li><a href="">北美风</a></li>
+							<li><a href="">日本风</a></li>
 							<li id="void">&nbsp;</li>
 						</ul>
 
@@ -285,9 +299,8 @@
 						<a href="index.html"><img src="img/LOGO%20(5).png" class="img"></a>
 					</div>
 				</div>
-				
-				<div id="top4"><!-- 热门商品导航栏 -->
-					
+				<div id="top4">
+					<!-- 热门商品导航栏 -->
 
 					<div id="top4_left">
 						&nbsp;&nbsp;热门素材
@@ -306,37 +319,37 @@
 					<a href="">
 						<div id=""><img src="img/TOP5%20(2).png">
 							<p>水花</p>
-							<div class="buy">免费使用</div>
+							<div class="buy">立刻查看</div>
 						</div>
 					</a>
 					<a href="">
 						<div id=""><img src="img/TOP5%20(3).png">
 							<p>翅膀</p>
-							<div class="buy">免费使用</div>
+							<div class="buy">立刻查看</div>
 						</div>
 					</a>
 					<a href="">
 						<div id=""><img src="img/TOP5%20(1).png">
 							<p>禅意</p>
-							<div class="buy">免费使用</div>
+							<div class="buy">立刻查看</div>
 						</div>
 					</a>
 					<a href="">
 						<div id=""><img src="img/TOP5%20(6).png">
 							<p>流光</p>
-							<div class="buy">免费使用</div>
+							<div class="buy">立刻查看</div>
 						</div>
 					</a>
 					<a href="">
 						<div id=""><img src="img/TOP5%20(5).png">
 							<p>花纹</p>
-							<div class="buy">1元购买</div>
+							<div class="buy">立刻查看</div>
 						</div>
 					</a>
 					<a href="">
 						<div id=""><img src="img/龙.png">
 							<p>小猫咪</p>
-							<div class="buy">1元购买</div>
+							<div class="buy">立刻查看</div>
 						</div>
 					</a>
 				</div>

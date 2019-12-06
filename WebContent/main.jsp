@@ -38,7 +38,10 @@
 						</form>
 					</div>
 					</span>
-					<a href="logon.jsp">免费注册</a>
+					
+						<a href="entry.jsp">免费注册</a>
+					
+					
 				</div>
 				<div id="top1_right">
 					<a href="userMassage.jsp">个人中心</a>|
@@ -73,13 +76,16 @@
 							</ul>
 							<div id="shouhou">
 								<div id="page">
-									<img src="img/未标题-1.png">&nbsp;&nbsp;LOGO&nbsp;&nbsp;<img src="img/1543723541(1).jpg" id="pagelist">
+									<img src="img/未标题-1.png">&nbsp;&nbsp;<%="用户名" %>&nbsp;&nbsp;<img src="img/1543723541(1).jpg" id="pagelist">
 									<div id="page-list">
-										<div><a href="http://127.0.0.1:8848/%E7%AB%9E%E8%B5%9BWORD/index.html">&nbsp;<img src="img/page%20(1).png">&nbsp;&nbsp;WORD&nbsp;</a></div>
-										<div><a href="http://127.0.0.1:8848/%E7%AB%9E%E8%B5%9B-%E7%BD%91%E9%A1%B5/index.html">&nbsp;&nbsp;&nbsp;<img
-												 src="img/page.jpg">&nbsp;&nbsp;网页&nbsp;&nbsp;</a></div>
-										<div><a href="http://127.0.0.1:8848/%E7%AB%9E%E8%B5%9BPPT/index.html">&nbsp;&nbsp;&nbsp;<img src="img/logoppt.png">&nbsp;&nbsp;PPT&nbsp;&nbsp;</a></div>
-										<div><a href="http://127.0.0.1:8848/%E7%AB%9E%E8%B5%9B%E4%B8%BB%E9%A1%B5/index.html">&nbsp;&nbsp;&nbsp;&nbsp;<img
+									
+									<% String productName ="商品名称"; %>
+									
+										<div><a href="">&nbsp;<img src="img/page%20(1).png">&nbsp;&nbsp;<%=productName %>&nbsp;</a></div>
+										<div><a href="">&nbsp;&nbsp;&nbsp;<img
+												 src="img/page.jpg">&nbsp;&nbsp;<%="" %>&nbsp;&nbsp;</a></div>
+										<div><a href="">&nbsp;&nbsp;&nbsp;<img src="img/logoppt.png">&nbsp;&nbsp;PPT&nbsp;&nbsp;</a></div>
+										<div><a href="">&nbsp;&nbsp;&nbsp;&nbsp;<img
 												 src="img/网页.jpg">&nbsp;&nbsp;主页</a></div>
 
 									</div>

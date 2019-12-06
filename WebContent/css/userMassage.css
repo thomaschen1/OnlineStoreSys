@@ -34,9 +34,17 @@ body{
 	padding:15px 0px; 
 	font-size: 20px
 }
+
+#massage div input:focus{
+ outline:none;
+}
+
 #massage div input{
+	border: 1px solid #63b5fe;
 	width:200px;
 	height:25px;
+	border-bottom-color:#0000ff;
+	background-color: #63b5fe;
 }
 
 #sex{

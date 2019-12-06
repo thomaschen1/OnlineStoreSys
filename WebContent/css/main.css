@@ -47,17 +47,16 @@ body{
 	margin-right: 920px;
 }
 #top1 a {
+	position:relative;
 	margin: 0px 10px;
 	text-decoration: none;
 	color: #666666;
 }
 #login_hidden{
 	position:absolute;
-	top:28px;
-	left:200px;
 	width:280px;
 	height:100px;
-	display: none;
+	display:none;
 	background-color: #eeeeee;
 	
 }
@@ -68,6 +67,10 @@ body{
 	border: 1px solid #eeeeee;
 	border-bottom-color: #0080ff;
 	background-color: #eeeeee;
+}
+
+#login_hidden td input:focus{
+	outline: none;
 }
 
 #top1 #span1:hover #login_hidden{
@@ -472,6 +475,10 @@ form #buttum {
 	z-index: 1;
 }
 
+#d1 button:focus{
+	outline: none;
+}
+
 .left {
 	border-top-right-radius: 100px;
 	border-bottom-right-radius: 100px;
@@ -487,6 +494,7 @@ form #buttum {
 	font-size: 24px;
 	color: #888888;
 	opacity: 0;
+	
 	
 }
 
@@ -544,7 +552,7 @@ form #buttum {
 }
 
 .ac{
-	background-color: blue;
+	background-color: gold;
 }
 
 

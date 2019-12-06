@@ -108,6 +108,7 @@ left: 0;
    border: 1px solid #2890fa;
    background: rgba(40, 144, 250, 0.2);
    border-radius: 5px;
+   
 }
 #shopkeeperMassage{
 	display:none;
@@ -127,6 +128,8 @@ left: 0;
 #shopkeeperMassage_show{
 	display:block;
 }
+
+
 
 
 

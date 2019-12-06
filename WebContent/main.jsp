@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ page import="product.Product" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -58,7 +59,7 @@
 					<!-- 搜索栏 -->
 
 					<div id="top2_left">
-						<img src="./img/logo.gif" id="logo">
+						<img src="./img/main/logo.gif" id="logo">
 					</div>
 					<div id="top2_search">
 						<form action="" method="">
@@ -76,17 +77,15 @@
 							</ul>
 							<div id="shouhou">
 								<div id="page">
-									<img src="img/未标题-1.png">&nbsp;&nbsp;<%="用户名" %>&nbsp;&nbsp;<img src="img/1543723541(1).jpg" id="pagelist">
+									<img src="./img/main/足迹.png">&nbsp;&nbsp;<%="浏览历史" %>&nbsp;&nbsp;&nbsp;&nbsp;
 									<div id="page-list">
 									
-									<% String productName ="商品名称"; %>
-									
-										<div><a href="">&nbsp;<img src="img/page%20(1).png">&nbsp;&nbsp;<%=productName %>&nbsp;</a></div>
-										<div><a href="">&nbsp;&nbsp;&nbsp;<img
-												 src="img/page.jpg">&nbsp;&nbsp;<%="" %>&nbsp;&nbsp;</a></div>
-										<div><a href="">&nbsp;&nbsp;&nbsp;<img src="img/logoppt.png">&nbsp;&nbsp;PPT&nbsp;&nbsp;</a></div>
-										<div><a href="">&nbsp;&nbsp;&nbsp;&nbsp;<img
-												 src="img/网页.jpg">&nbsp;&nbsp;主页</a></div>
+									<% String[] productName ={"商品名称1","商品名称2","商品名称3","商品名称4"}; %>
+										<!-- 此处后期用标签循环语句优化 -->
+										<div><a href=<%="（传入商品地址）" %>>&nbsp;<img src=<%="./img/main/足迹.png" %>>&nbsp;&nbsp;<%=productName[0] %>&nbsp;</a></div>
+										<div><a href=<%="（传入商品地址）" %>>&nbsp;<img src=<%="./img/main/足迹.png" %>>&nbsp;&nbsp;<%=productName[1] %>&nbsp;</a></div>
+										<div><a href=<%="（传入商品地址）" %>>&nbsp;<img src=<%="./img/main/足迹.png" %>>&nbsp;&nbsp;<%=productName[2] %>&nbsp;</a></div>
+										<div><a href=<%="（传入商品地址）" %>>&nbsp;<img src=<%="./img/main/足迹.png" %>>&nbsp;&nbsp;<%=productName[3] %>&nbsp;</a></div>
 
 									</div>
 								</div>
@@ -104,7 +103,7 @@
 						<ul>
 							<li id="first_list">
 								<div id="b">全部分类</div>
-								<div class="c"><img src="img/搜狗截图_2018-12-11_08-54-19.png">&nbsp;</div>
+								<div class="c"><img src="./img/main/分类图标.png">&nbsp;</div>
 							</li>
 							<li id="b2" class="d">
 								<div class="b"><a href="" name=""><%=product_name[0]%></a></div>
@@ -201,10 +200,10 @@
 							<li><a href="">热门</a></li>
 							<li><a href="">促销</a></li>
 							<li><a href="">好评</a></li>
-							<li><a href="">ACG</a></li>
-							<li><a href="">中国风</a></li>
-							<li><a href="">北美风</a></li>
-							<li><a href="">日本风</a></li>
+							<li><a href="">品牌</a></li>
+							<li><a href="">潮流</a></li>
+							<li><a href="">游戏</a></li>
+							<li><a href="">虚拟</a></li>
 							<li id="void">&nbsp;</li>
 						</ul>
 
@@ -214,9 +213,13 @@
 						<div id="">
 							<div id="q1">
 								<div id="d1">
-									<img src="../竞赛-网页/img/YX5.jpg" class="imgL active">
-									<img src="../竞赛-网页/img/YX1.jpg" class="imgL">
-									<img src="../竞赛PPT/img/cat.png" class="imgL">
+								
+								<!-- 通过Product传入href和src -->
+								<% Product[] show; %>
+								
+									<a href=""><img src=Product[0]. class="imgL active"></a>
+									<a href=""><img src="../竞赛-网页/img/YX1.jpg" class="imgL"></a>
+									<a href=""><img src="../竞赛PPT/img/cat.png" class="imgL"></a>
 									<button type="button" class="left" onmousedown="left()"><</button>
 									<button type="button" class="right" onmousedown="right()">></button>
 									
@@ -309,51 +312,52 @@
 					<!-- 热门商品导航栏 -->
 
 					<div id="top4_left">
-						&nbsp;&nbsp;热门素材
+						&nbsp;&nbsp;热门商品
 					</div>
 					<div id="top4_right">
-						<a href="">LOGO</a>&nbsp;/
-						<a href="">GIF图</a>&nbsp;/
-						<a href="">表情包</a>
+						<a href=""><%=product_name[0] %></a>&nbsp;/
+						<a href=""><%=product_name[1] %></a>&nbsp;/
+						<a href=""><%=product_name[2] %></a>
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						<a href="">查看全部<img src="img/右三角.png"></a>
+						<a href="">查看全部&nbsp;&nbsp;↓</a>
 					</div>
 				</div>
 				<div id="top5">
 					<!-- 热门商品兰 -->
+					<!-- 通过Product类传入href、img、商品名称、价格等 -->
 
 					<a href="">
-						<div id=""><img src="img/TOP5%20(2).png">
+						<div id=""><img src="">
 							<p>水花</p>
 							<div class="buy">立刻查看</div>
 						</div>
 					</a>
 					<a href="">
-						<div id=""><img src="img/TOP5%20(3).png">
+						<div id=""><img src="">
 							<p>翅膀</p>
 							<div class="buy">立刻查看</div>
 						</div>
 					</a>
 					<a href="">
-						<div id=""><img src="img/TOP5%20(1).png">
+						<div id=""><img src="">
 							<p>禅意</p>
 							<div class="buy">立刻查看</div>
 						</div>
 					</a>
 					<a href="">
-						<div id=""><img src="img/TOP5%20(6).png">
+						<div id=""><img src="">
 							<p>流光</p>
 							<div class="buy">立刻查看</div>
 						</div>
 					</a>
 					<a href="">
-						<div id=""><img src="img/TOP5%20(5).png">
+						<div id=""><img src="">
 							<p>花纹</p>
 							<div class="buy">立刻查看</div>
 						</div>
 					</a>
 					<a href="">
-						<div id=""><img src="img/龙.png">
+						<div id=""><img src="">
 							<p>小猫咪</p>
 							<div class="buy">立刻查看</div>
 						</div>

@@ -141,7 +141,7 @@ body{
 }
 #top2 #shouhou {
 	height: 29px;
-	width: 150px;
+	width: auto;
 	padding: 4px 0px;
 	box-shadow: 0px 0px 5px yellow;
 	position: relative;
@@ -153,15 +153,14 @@ body{
 }
 #top2 #shouhou:hover #page-list{
 	position: absolute;	
-	top: 37.5px;
-	left: -66px;
+	top: 36px;
+	left: -60px;
 }
 #page-list{
 	width: 250px;
-	height: 80px;
+	height: auto;
 	position: fixed;
 	background-color: white;
-	top: 115px;
 	left: -500px;
 	display: none;
 	box-shadow: 0px 0px 10px gold;
@@ -169,7 +168,7 @@ body{
 #page-list div{
 	padding-bottom: 3px;
 	margin:3px 5px;
-	width: 115px;
+	width: 240px;
 	height: 30px;
 	box-shadow: 0px 0px 10px gold;
 	float: left;

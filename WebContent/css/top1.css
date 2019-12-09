@@ -1,0 +1,112 @@
+@charset "UTF-8";@charset "UTF-8";
+* {
+	padding: 0px;
+	margin: 0px;
+}
+body{
+	
+	
+	background-attachment: fixed;
+	background-size: cover;
+	width: 100%;
+}
+#bg{
+	position: absolute;
+	top:0px;
+	left:0px;
+	z-index: -100;
+	
+}
+#bg img{
+	width: 1903px;
+}
+#box {
+	margin: 0 auto;
+	width: 1213px;
+	height: auto;
+	opacity: 0.9;
+}
+#box a:hover {
+	color: #CCA459;
+}
+#whith {
+	margin: 0 auto;
+	width: 1213px;
+}
+#top1 {
+	height: 40px;
+	width: auto;
+	background-color: #eeeeee;
+	color: #666666;
+	font-size: 14px;
+}
+#top1_left {
+	height: 30px;
+	width: 287px;
+	padding-top: 10px;
+	color: #666666;
+	margin-right: 920px;
+}
+#top1 a {
+	position:relative;
+	margin: 0px 10px;
+	text-decoration: none;
+	color: #666666;
+}
+#login_hidden{
+	position:absolute;
+	width:280px;
+	height:100px;
+	display:none;
+	background-color: #eeeeee;
+	
+}
+#login_hidden td{
+	padding-top:10px;
+}
+#login_hidden td input{
+	border: 1px solid #eeeeee;
+	border-bottom-color: #0080ff;
+	background-color: #eeeeee;
+}
+
+#login_hidden td input:focus{
+	outline: none;
+}
+
+#top1 #span1:hover #login_hidden{
+	border-radius:10px;
+	display: block;
+	z-index: 10;
+}
+
+#lg_div{
+	position:relative;
+	top:10px;
+	left:0px;
+	
+}
+#lg_div input{
+	width: 70px;
+}
+
+#top1 a:hover {
+	color: goldenrod;
+}
+#top1 #into {
+	color: goldenrod;
+}
+#top1 #top1_right {
+	padding-top: 10px;
+	height: 30px;
+	width: 550px;
+	position: relative;
+	margin-left: 800px;
+	top: -40px;
+}
+#little_box{
+	position:relative;
+	height: 545px;
+	top:20px;
+	box-shadow: 0px 0px 10px gold;
+}

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 
 
 #pro_img{
@@ -23,7 +24,7 @@
 #pro_massage .tips1{
 	font-size: 16px;
 	color: #c0c0c0;
-	width: 70px;
+	width: 90px;
 	height:60px;
 }
 #pro_massage .massage{
@@ -31,9 +32,16 @@
 	font-size: 24px;
 	color: #77c1ee;
 	width: 370px;
-	height:60px;
+	height:auto;
 	word-wrap:break-word; 
 	word-break:break-all; 
+}
+#pro_massage .massage input{
+	height: 30px;
+	width: 300px;
+}
+#pro_massage .massage input,textarea{
+	font-size: 21px;
 }
 
 #pro_describ .massage{

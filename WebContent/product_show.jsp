@@ -90,6 +90,7 @@
 						<td><div id="massage_amount" class="massage">
 								<button class="d_button" onclick="_delete()">-</button>
 								<% int amount=0; %>
+								
 								<span id="amount"><%=amount %></span>
 								
 								<button class="a_button" onclick="add()">+</button>

@@ -8,7 +8,7 @@
 		
 <title>Insert title here</title>
 </head>
-<body>
+<body onload="getProductID()">
 
 		<div id="top1" align="center">
 			<!-- 最上面的信息，显示登录注册，可在此切换到登录注册画面-->

@@ -1,0 +1,99 @@
+
+
+#pro_img{
+	background-color: #abc;
+	position:relative;
+	top:10px;
+	left:10px;
+	height:525px;
+	width: 700px;
+}
+
+#pro_massage{
+	background-color: #ff00ff;
+	position:relative;
+	top:-525px;
+	left:730px;
+	height:545px;
+	width: 470px;
+}
+#pro_massage div{
+	background-color: #ff8080;
+	height:60px;}
+
+
+#pro_massage .tips1{
+	font-size: 16px;
+	color: #c0c0c0;
+	width: 70px;
+	height:60px;
+}
+#pro_massage .massage{
+	
+	background-color:#80ff80;
+	font-size: 24px;
+	color: #77c1ee;
+	width: 370px;
+	height:60px;
+	word-wrap:break-word; 
+	word-break:break-all; 
+}
+
+#pro_describ .massage{
+	height: 100px;
+}
+
+#pro_style .massage{
+	height: auto;
+}
+#pro_massage #massage_style{
+	height: auto;
+}
+
+#pro_massage #massage_describ{
+	height: 80px;
+	overflow: auto;
+	
+}
+table {
+	border-spacing: 0px 15px;
+}
+table td{
+	vertical-align: top;
+}
+#pro_amount button {
+	width: 20px;
+	height: 20px;
+	border-radius:100px; 
+	border: none;
+}
+
+.style_button{
+	width: 50px;
+	height:50px;
+	border: none;
+}
+
+#choice {
+	box-shadow: 0px 0px 10px red;
+}
+#add_to_car{
+	width: 100px;
+	height: 40px;
+	border-radius:100px; 
+	border: none;
+}
+#buy{
+	width: 100px;
+	height: 40px;
+	border-radius:100px; 
+	border: none;
+	margin-left: 100px;
+}
+
+
+
+
+
+
+

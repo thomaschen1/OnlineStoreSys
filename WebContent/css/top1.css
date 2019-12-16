@@ -107,6 +107,6 @@ body{
 #little_box{
 	position:relative;
 	height: 545px;
-	top:20px;
+	margin-top:20px;
 	box-shadow: 0px 0px 10px gold;
 }

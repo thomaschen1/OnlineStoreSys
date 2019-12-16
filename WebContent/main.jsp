@@ -18,7 +18,8 @@
 			<div id="whith">
 				<div id="top1_left">
 					Hi,欢迎来到网店购物&nbsp;&nbsp;
-					<span id="span1"><a href="entry.jsp" id="into">请登录</a>
+					<span id="span1">
+					<a href="entry.jsp" id="into">请登录</a>
 					<div id="login_hidden" >
 						<form action="">
 							<table>
@@ -217,9 +218,9 @@
 								<!-- 通过Product传入href和src -->
 								<% Product[] show; %>
 								
-									<a href=""><img src=Product[0]. class="imgL active"></a>
-									<a href=""><img src="../竞赛-网页/img/YX1.jpg" class="imgL"></a>
-									<a href=""><img src="../竞赛PPT/img/cat.png" class="imgL"></a>
+									<a href="product_show.jsp" value="111"><img src=".\img\main\足迹.png" class="imgL active"></a>
+									<a href="product_show.jsp"><img src="./img/bg.gif" class="imgL"></a>
+									<a href="product_show.jsp"><img src="./img/main/logo.gif" class="imgL"></a>
 									<button type="button" class="left" onmousedown="left()"><</button>
 									<button type="button" class="right" onmousedown="right()">></button>
 									

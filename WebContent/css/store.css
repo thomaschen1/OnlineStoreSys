@@ -1,0 +1,55 @@
+@charset "UTF-8";
+#top4{
+	margin-top: 50px;
+	height: 38px;
+	background-color: #afc6f5;
+	box-shadow: 0px 0px 10px yellow;
+	opacity: 0.8;
+}
+#top4 #top4_left{
+	font-size: 25px;
+	margin: 2.5px;
+	display: inline-block;
+}
+/*top5*/
+#top5{
+	background-color:#dedede;
+	height: 396px;
+	box-shadow: 0px 0px 15px yellow;
+}
+#top5 div{
+	height: 395px;
+	width: 202px;
+	float: left;
+	text-align: center;
+	font-size: 18px;
+	border-bottom: 1px solid #eeeeee;
+	color: #757575;
+}
+
+#top5 div img{
+	height: 265px;
+	width: 180px;
+	margin: 10px;
+	background-color: cornsilk;
+}
+#top5 .buy{
+	width: 135px;
+	height: 27px;
+	border-radius: 3px;
+	padding-top: 7px;
+	font-size: 13px;
+	color: #757575;
+	border: 1px solid #757575;
+	margin: 20px 0px 0px 33px;
+}
+#top5 div:hover .buy{
+	background-color: #f8f4ed;
+	border: 1px solid #CCA459;
+	color: #CCA459;
+}
+#top5 div:hover{
+	background-color:#cdcdcd;
+	box-shadow: 0px 0px 10px #dedede;
+	color: #CCA459;
+}

@@ -60,10 +60,10 @@
 	overflow: auto;
 	
 }
-table {
+#pro_massage table {
 	border-spacing: 0px 15px;
 }
-table td{
+#pro_massage table td{
 	vertical-align: top;
 }
 #pro_amount button {

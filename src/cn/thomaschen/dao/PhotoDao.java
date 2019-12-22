@@ -14,7 +14,7 @@ import org.apache.commons.fileupload.servlet.ServletFileUpload;
 
 public class PhotoDao {
 	/**
-	 * 2018年10月24日下午10:41:33 这个函数的功能是获取前端的数据集合，将文件打包成File以便后续操作
+	* 这个函数的功能是获取前端的数据集合，将文件打包成File以便后续操作
 	 */
 	public static List<FileItem> getRequsetFileItems(HttpServletRequest request, ServletContext servletContext) {
 		boolean isMultipart = ServletFileUpload.isMultipartContent(request);
@@ -36,10 +36,10 @@ public class PhotoDao {
 	}
 
 	/**
-	 * 2018年10月24日下午10:37:59 这个函数的功能是将文件传到预先设置的绝对路径中，也就是项目里的imgs文件夹
+	 *  这个函数的功能是将文件传到预先设置的绝对路径中，也就是项目里的imgs文件夹
 	 */
 	public static boolean saveFile(FileItem item, String fileName) {
-		File savePath = new File("E:\\Users\\javawebspace\\dvdWeb3.5\\WebContent\\imgs");
+		File savePath = new File("D:\\EclipseData\\OnlineStoreSys\\WebContent\\imgs");
 		if (!savePath.exists()) {
 			savePath.mkdirs();
 		}
@@ -55,7 +55,7 @@ public class PhotoDao {
 	}
 
 	/**
-	 * 2018年10月24日下午8:02:04 这个函数的功能是获取当前时间点与1970年的间隔秒数
+	 * 这个函数的功能是获取当前时间点与1970年的间隔秒数
 	 */
 	public static int getSecondTimestamp(Date date) {
 		if (null == date) {
@@ -73,7 +73,7 @@ public class PhotoDao {
 
 	/**
 	 * 
-	 * 2018年10月24日下午8:42:05 这个函数的功能是得到新的照片名称
+	 *  这个函数的功能是得到新的照片名称
 	 */
 	public static String getPhotoNewName() {
 		Date date = new Date();
@@ -83,7 +83,7 @@ public class PhotoDao {
 	}
 
 	/**
-	 * 2018年10月24日下午8:48:58 这个函数的功能是判断文件后缀是否是jpg格式
+	 *  这个函数的功能是判断文件后缀是否是jpg格式
 	 */
 	public static boolean isGif(FileItem item) {
 		String fileFullName = item.getName();

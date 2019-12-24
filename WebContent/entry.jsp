@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ page import="cn.thomaschen.entity.User" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,20 +15,56 @@
 </head>
 <body >
 	<!-- particles.js container -->
+	<%!
+		boolean decide(String password,String repassword){
+		return password.equals(repassword);
+	}
+	%>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+	   <%
+     	request.setCharacterEncoding("utf-8");
+     	String phonenumber=request.getParameter("phonenumber");
+     	String password=request.getParameter("password");
+     	String repassword=request.getParameter("repassword");
+     	if(phonenumber!=null&& !phonenumber.isEmpty()&&phonenumber.length()==11&&password !=null&& !password.isEmpty()&& decide(password, repassword)){
+     		User user=new User();
+     		user.setPhonenumber(request.getParameter("phonenumber"));
+     		user.setPassword(request.getParameter("password"));
+     		user.setNickname("no");
+     		user.setName("no");
+     		user.setSex(null);
+     		user.setBirthday("");
+     		
+     %>
+     <jsp:useBean id="bean" class="cn.thomaschen.service.UserBean" scope="page">
+     	<jsp:setProperty name="bean" property="user" value="<%=user %>" />
+     	<jsp:setProperty name="bean" property="order" value="insert"/>
+     </jsp:useBean>
+     <%
+     bean.updataData();
+     User reuser=bean.findData();
+     session.setAttribute("user", reuser);
+     %>
+     <jsp:forward page="main.jsp"/>
+     <%
+     }
+     	else{
+     %>
+   
 	<div id="particles-js"
 		style="align-items: center; justify-content: center"></div>
 	<div class="login-page">
+		<form method="post" action="entry.jsp">
 		<div id="login_content">
 			<div class="login-tit">注册</div>
 			<div class="login-input">
-				<input id="userName" type="text" placeholder="输入账号（手机号）">
+				<input id="userName" type="text" name="phonenumber" placeholder="输入账号（手机号）">
 			</div>
 			<div class="login-input">
-				<input id="input_pwd" type="password" placeholder="输入密码">
+				<input id="input_pwd" type="password" name="password" placeholder="输入密码">
 
 			</div>
 			<div class="login-input">
-				<input id="sure_pwd" type="password" placeholder="确认密码">
+				<input id="sure_pwd" type="password" name="repassword" placeholder="确认密码">
 
 			</div>
 			<div id="shopkeeperMassage">
@@ -46,13 +83,14 @@
 
 			<div class="login-btn">
 				<div class="login-btn-left">
-					<span id="login">注册</span>
+					<span id="login"><input type="submit" value="注册"></span>
 				</div>
 				<div class="login-btn-right" onClick="changeImg()">
 					<img src="img/check.png" alt="" id="picture"> 注册店主
 				</div>
 			</div>
 		</div>
+		</form>
 	</div>
 
 
@@ -80,5 +118,8 @@
 			
 			
 		</script>
+		<%
+     	}
+		%>
 </body>
 </html>

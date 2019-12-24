@@ -1,8 +1,6 @@
-<%@page import="javax.swing.JOptionPane"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ page import="cn.thomaschen.entity.Goods,cn.thomaschen.entity.User" %>
-    
+    <%@ page import="product.Product" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,25 +9,6 @@
 		<title>网店系统</title>
 </head>
 <body>
-<%
-	request.setCharacterEncoding("utf-8");
-	User user=new User();
-	String phonenumber=request.getParameter("phonenumber");
-	String password=request.getParameter("password");
-	if(phonenumber!=null&&password!=null){
-		user.setPhonenumber(phonenumber);
-		user.setPassword(password);%>
-		<jsp:useBean id="bean" class="cn.thomaschen.service.UserBean" scope="page"/>
-		<%
-		user=bean.judge(user);
-		if(user==null){
-		%>
-		<script type="text/javascript" language="javascript">
-		alert("密码错误");  
-		</script>	
-		<%}
-	}else{%>
-		<% user=(User)session.getAttribute("user");}%>
 <body onload="a()">
 
 		<span id="bg"><img alt="" src="./img/bg.gif"></span>
@@ -39,35 +18,32 @@
 			<div id="whith">
 				<div id="top1_left">
 					Hi,欢迎来到网店购物&nbsp;&nbsp;
-					<%if(user==null){%>
-					<span id="span1"><a  id="into">请登录</a>
-					
-						
+					<span id="span1">
+					<a href="entry.jsp" id="into">请登录</a>
 					<div id="login_hidden" >
-					<form action="main.jsp">
+						<form action="">
 							<table>
 							<tr>
 								<td><strong>账号：</strong></td>
-								<td><input type="text" name="phonenumber" id="login_ID"></td>
+								<td><input type="text" id="login_ID"></td>
 							</tr>
 							<tr>
 								<td><strong>密码：</strong></td>
-								<td><input type="password" name="password" id="login_pwd"></td>
+								<td><input type="password" id="login_pwd"></td>
 							</tr>
 							
 							</table>
 							<div align="center" id="lg_div">
 								<input type="submit" id="login_submit" value="登录" >
-								</form>
 							</div>
+							
+						</form>
 					</div>
 					</span>
-					<a href="entry.jsp">免费注册</a>
-					<%}
-					else{
-					session.setAttribute("user", user);%>
-					<span id="span1"><a href="userMassage.jsp"><%=user.getPhonenumber()%></a>
-					<%} %>				
+					
+						<a href="entry.jsp">免费注册</a>
+					
+					
 				</div>
 				<div id="top1_right">
 					<a href="userMassage.jsp">个人中心</a>|
@@ -240,7 +216,7 @@
 								<div id="d1">
 								
 								<!-- 通过Product传入href和src -->
-								<% Goods[] show; %>
+								<% Product[] show; %>
 								
 									<a href="product_show.jsp" value="111"><img src=".\img\main\足迹.png" class="imgL active"></a>
 									<a href="product_show.jsp"><img src="./img/bg.gif" class="imgL"></a>

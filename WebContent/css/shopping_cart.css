@@ -1,0 +1,18 @@
+@charset "UTF-8";
+#top4{
+	margin-top: 50px;
+	height: 38px;
+	background-color: #afc6f5;
+	box-shadow: 0px 0px 10px yellow;
+	opacity: 0.8;
+}
+#top4 #top4_left{
+	font-size: 25px;
+	margin: 2.5px;
+	display: inline-block;
+}
+#pro_list {
+	background-color:white;
+	height: 396px;
+	box-shadow: 0px 0px 15px yellow;
+}

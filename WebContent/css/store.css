@@ -33,23 +33,57 @@
 	margin: 10px;
 	background-color: cornsilk;
 }
-#top5 .buy{
+#top5 .edit{
 	width: 135px;
 	height: 27px;
 	border-radius: 3px;
-	padding-top: 7px;
+	margin-top:7px;
 	font-size: 13px;
 	color: #757575;
 	border: 1px solid #757575;
-	margin: 20px 0px 0px 33px;
 }
-#top5 div:hover .buy{
-	background-color: #f8f4ed;
+#top5 .edit:hover {
 	border: 1px solid #CCA459;
 	color: #CCA459;
+	box-shadow: 0px 0px 10px #dedede;
+}#top5 .add:hover {
+	border: 1px solid #CCA459;
+	color: #CCA459;
+	box-shadow: 0px 0px 10px #dedede;
+}
+#top5 .add{
+	width: 135px;
+	height: 27px;
+	border-radius: 3px;
+	padding-top:7px;
+	margin:20px 0px 0px 30px;
+	font-size: 13px;
+	color: #757575;
+	border: 1px solid #757575;
 }
 #top5 div:hover{
 	background-color:#cdcdcd;
 	box-shadow: 0px 0px 10px #dedede;
 	color: #CCA459;
+}
+
+#order_massage{
+	background-color:white;
+	height: 396px;
+	box-shadow: 0px 0px 15px yellow;
+}
+
+#order_massage table th{
+	border:1px solid black;
+	width:200px;
+	margin-left: 20px;
+}
+#order_massage table{
+	width:1213ps;
+	border:1px solid black;
+}
+
+#order_massage table tbody td{
+	border:1px solid black;
+	margin-left: 20px;
 }

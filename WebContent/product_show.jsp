@@ -84,24 +84,23 @@
 								
 							</div></td>
 					</tr>
+					
 					<tr id="pro_amount">
 						<!-- 商品数量 -->
 						<td><div class="tips1">数量&nbsp;:</div></td>
 						<td><div id="massage_amount" class="massage">
-								<button class="d_button" onclick="_delete()">-</button>
-								<% int amount=0; %>
-								
-								<span id="amount"><%=amount %></span>
-								
-								<button class="a_button" onclick="add()">+</button>
+								<span id="amount"><input type="number" style="height: 20px;width: 52px;" name="amount" value="1"></span>
+	
 							</div></td>
 					</tr>
 					<tr>
 					<td></td>
-					<td><button id="add_to_car" onclick="addToCar()">购物车</button><button id="buy">购买</button></td>
+					<td>
+					<button id="add_to_car" onclick="addToCar()">购物车</button>
+					<button type="submit" id="buy" s>购买</button>
+					</td>
 					</tr>
 				</table>
-				
 			</div>
 
 		</div>
@@ -111,15 +110,6 @@
 			document.getElementById('choice').id="";
 			select.id="choice";
 		}
-		function _delete() {
-			
-			document.getElementById('amount').innerHTML="1";
-		}
-		function add() {
-			
-			document.getElementById('amount').innerHTML="<%=amount%>";
-		}
-		
 		
 		function addToCar(){
 			

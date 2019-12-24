@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.List;
 
 public class Shopkeeper extends User implements Serializable{
-	private List<Goods> goods;
+	private List<Product> Product;
 	private String shopname;
 	private String shopdescrib;
 	public String getShopdescrib() {
@@ -19,11 +19,11 @@ public class Shopkeeper extends User implements Serializable{
 	public void setShopname(String shopname) {
 		this.shopname = shopname;
 	}
-	public List<Goods> getGoods() {
-		return goods;
+	public List<Product> getGoods() {
+		return Product;
 	}
-	public void setGoods(List<Goods> goods) {
-		this.goods = goods;
+	public void setGoods(List<Product> Product) {
+		this.Product = Product;
 	}
 	
 }

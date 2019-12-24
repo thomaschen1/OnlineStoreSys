@@ -1,9 +1,10 @@
 package cn.thomaschen.productBean;
-import product.Product;
+import cn.thomaschen.entity.Product;
 import java.sql.*;
 import java.util.*;
 
 import cn.thomaschen.base.BaseMethod;
+import cn.thomaschen.base.DBMangerBean;
 
 public class ProductBean implements java.io.Serializable {
 	private Product product;
@@ -43,8 +44,8 @@ public class ProductBean implements java.io.Serializable {
 				Product prod = new Product();
 				prod.setId(rs.getInt("id"));
 				prod.setName(rs.getString("name"));
-				prod.setDescription(rs.getString("description"));
-				prod.setPrice(rs.getDouble("price"));
+				prod.setDescrib(rs.getString("productIntrod"));
+				prod.setPrice(rs.getDouble("unitprice"));
 				products.add(prod);
 			}
 			man.close();
@@ -59,27 +60,32 @@ public class ProductBean implements java.io.Serializable {
 		String sql = "";
 		Object[] parms = null;
 		if (flag.equals("insert") && product != null) {
-			sql = "INSERT INTO `Product` (`name`,`description`,`price`) VALUES (?,?,?)";
-			parms = new Object[3];
+			sql = "INSERT INTO products(name,photo,productIntrod,sperification,number,unitprice) VALUES (?,?,?,?,?,?)";
+			parms = new Object[6];
 			parms[0] = product.getName();
-			parms[1] = product.getDescription();
-			parms[2] = product.getPrice();
+			parms[1] = product.getImg().getName();
+			parms[2] = product.getDescrib();
+			parms[3] = product.getSperification();
+			parms[4] = product.getAmount();
+			parms[5] = product.getPrice();
 		} else if (flag.equals("update") && product != null && product.getId() > 0) {
-			sql = "update Product set name=?,description=?,price=? where id = ?";
-			parms = new Object[4];
+			sql = "update Product set name=?,photo=?,productIntrod=? ,sperification=?,number=?,unitprice=? where id = ?";
+			parms = new Object[7];
 			parms[0] = product.getName();
-			;
-			parms[1] = product.getDescription();
-			parms[2] = product.getPrice();
-			parms[3] = product.getId();
+			parms[1] = product.getImg().getName();
+			parms[2] = product.getDescrib();
+			parms[3] = product.getSperification();
+			parms[4] = product.getAmount();
+			parms[5] = product.getPrice();
+			parms[6] = product.getId();
 		} else if (flag.equals("delete") && product != null && product.getId() > 0) {
 			sql = "delete from Product where id = ?";
 			parms = new Object[1];
 			parms[0] = product.getId();
 		}
 		if (!sql.equals("")) {
-			BaseMethod man = new BaseMethod();
-			boolean result = man.updateData(sql, parms);
+			DBMangerBean man = new DBMangerBean();
+			boolean result = man.UpdateData(sql, parms);
 			man.close();
 			return result;
 		}

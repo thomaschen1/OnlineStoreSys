@@ -77,13 +77,13 @@ public class PhotoDao {
 	 */
 	public static String getPhotoNewName() {
 		Date date = new Date();
-		int second = getSecondTimestamp(date);
+		int second = getSecondTimestamp(date);	
 		String fileName = String.valueOf(second) + ".jpg";
 		return fileName;
 	}
 
 	/**
-	 *  这个函数的功能是判断文件后缀是否是jpg格式
+	 *  这个函数的功能是判断文件后缀是否是jsp格式
 	 */
 	public static boolean isGif(FileItem item) {
 		String fileFullName = item.getName();

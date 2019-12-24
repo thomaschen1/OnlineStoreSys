@@ -3,7 +3,7 @@
 <!-- 默认配置信息 -->
     <default-config>
         <!-- 链接四大参数配置 -->
-        <property name="jdbcUrl">jdbc:mysql://47.107.255.204/onlinestore</property>
+        <property name="jdbcUrl">jdbc:mysql://47.107.255.204:3306/onlinestore</property>
         <property name="driverClass">com.mysql.cj.jdbc.Driver</property>
         <property name="user">root</property>
         <property name="password">chen18312621542</property>

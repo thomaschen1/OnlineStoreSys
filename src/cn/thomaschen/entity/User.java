@@ -13,7 +13,7 @@ public class User implements Serializable{
 	private String birthday;
 	private String area;
 	private String postbox;
-	private List<Goods> goods;
+	private List<Product> Product;
 	
 	public User() {
 	
@@ -27,7 +27,7 @@ public class User implements Serializable{
 	}
 	
 	public User(String phonenumber, String password, String name, String nickname, String sex, String birthday,
-			String area, String postbox, List<Goods> goods) {
+			String area, String postbox, List<Product> Product) {
 		super();
 		this.id = id++;
 		this.phonenumber = phonenumber;
@@ -38,7 +38,7 @@ public class User implements Serializable{
 		this.birthday = birthday;
 		this.area = area;
 		this.postbox = postbox;
-		this.goods = goods;
+		this.Product = Product;
 	}
 	public String getNickname() {
 		return nickname;
@@ -47,11 +47,11 @@ public class User implements Serializable{
 		this.nickname = nickname;
 	}
 	
-	public List<Goods> getGoods() {
-		return goods;
+	public List<Product> getGoods() {
+		return Product;
 	}
-	public void setGoods(List<Goods> goods) {
-		this.goods = goods;
+	public void setGoods(List<Product> Product) {
+		this.Product = Product;
 	}
 	
 	public String getPostbox() {

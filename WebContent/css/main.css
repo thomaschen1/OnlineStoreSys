@@ -148,6 +148,12 @@ body{
 	top: -39px;
 	left: 380px;
 }
+#top2 #shouhou_0{
+	position: absolute;	
+	top: 36px;
+	left: -6000px;
+}
+
 #top2 #shouhou:hover{
 	background-color: lemonchiffon;
 }

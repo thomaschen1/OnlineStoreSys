@@ -11,13 +11,13 @@
 <body>
 	<div id="box" align="center">
 	<div id="head"><strong>个人信息</strong></div>
-		<%!User user=null; 	
+		<%!User user=new User(); 
+			
 		%>
 		<%
-		
+		user.setNickname("");
 		request.setCharacterEncoding("utf-8");
 		String name=request.getParameter("name");
-		System.out.print(name+"11111");
 		if(name!=null){
 			user=(User)session.getAttribute("user");
 			user.setName(request.getParameter("name"));

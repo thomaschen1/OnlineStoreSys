@@ -2,17 +2,18 @@ package cn.thomaschen.entity;
 
 import cn.thomaschen.entity.Img;
 
-public class Goods {
+public class Product {
 	private int id;
 	private String name;
 	private double price;
 	private String describ;
+	private String sperification;
 	private Img img;
 	private int amount;
-	public Goods(){
+	public Product(){
 		
 	}
-	public Goods(int id, String name, double price, String describ, Img img, int amount) {
+	public Product(int id, String name, double price, String describ, Img img, int amount,String sperification) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -20,6 +21,7 @@ public class Goods {
 		this.describ = describ;
 		this.img = img;
 		this.amount = amount;
+		this.sperification=sperification;
 	}
 	public int getId() {
 		return id;
@@ -50,6 +52,13 @@ public class Goods {
 	}
 	public void setImg(Img img) {
 		this.img = img;
+	}
+	
+	public String getSperification() {
+		return sperification;
+	}
+	public void setSperification(String sperification) {
+		this.sperification = sperification;
 	}
 	public int getAmount() {
 		return amount;

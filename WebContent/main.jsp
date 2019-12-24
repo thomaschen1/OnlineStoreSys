@@ -1,7 +1,7 @@
 <%@page import="javax.swing.JOptionPane"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ page import="cn.thomaschen.entity.Goods,cn.thomaschen.entity.User" %>
+    <%@ page import="cn.thomaschen.entity.Product,cn.thomaschen.entity.User" %>
     
 <!DOCTYPE html>
 <html>
@@ -18,18 +18,23 @@
 	String password=request.getParameter("password");
 	if(phonenumber!=null&&password!=null){
 		user.setPhonenumber(phonenumber);
-		user.setPassword(password);%>
+		user.setPassword(password);
+%>
 		<jsp:useBean id="bean" class="cn.thomaschen.service.UserBean" scope="page"/>
 		<%
-		user=bean.judge(user);
-		if(user==null){
+			user=bean.judge(user);
+				if(user==null){
 		%>
 		<script type="text/javascript" language="javascript">
 		alert("密码错误");  
 		</script>	
-		<%}
-	}else{%>
-		<% user=(User)session.getAttribute("user");}%>
+		<%
+				}
+					}else{
+			%>
+		<%
+			user=(User)session.getAttribute("user");}
+		%>
 <body onload="a()">
 
 		<span id="bg"><img alt="" src="./img/bg.gif"></span>
@@ -39,7 +44,9 @@
 			<div id="whith">
 				<div id="top1_left">
 					Hi,欢迎来到网店购物&nbsp;&nbsp;
-					<%if(user==null){%>
+					<%
+						if(user==null){
+					%>
 					<span id="span1"><a  id="into">请登录</a>
 					
 						
@@ -63,11 +70,15 @@
 					</div>
 					</span>
 					<a href="entry.jsp">免费注册</a>
-					<%}
-					else{
-					session.setAttribute("user", user);%>
+					<%
+						}
+											else{
+											session.setAttribute("user", user);
+					%>
 					<span id="span1"><a href="userMassage.jsp"><%=user.getPhonenumber()%></a>
-					<%} %>				
+					<%
+						}
+					%>				
 				</div>
 				<div id="top1_right">
 					<a href="userMassage.jsp">个人中心</a>|
@@ -91,7 +102,9 @@
 							<input type="text" name="search" placeholder="  搜索商品" id="search" />
 							<input type="submit" value="搜索" id="buttum" />
 							<ul>
-							<% String product_name[]={"服装","手机","玩具","乐器","飞机","礼物","电器"}; %>
+							<%
+								String product_name[]={"服装","手机","玩具","乐器","飞机","礼物","电器"};
+							%>
 								<li><a href="" name=""><%=product_name[0]%></a></li>
 								<li><a href="" name=""><%=product_name[1]%></a></li>
 								<li><a href="" name=""><%=product_name[2]%></a></li>
@@ -100,20 +113,17 @@
 								<li><a href="" name=""><%=product_name[5]%></a></li>
 								<li><a href="" name=""><%=product_name[6]%></a></li>
 							</ul>
-							<div id="shouhou">
+							<%
+								String store="shouhou_0";
+																		if(user!=null)
+																		store="shouhou" ;
+							%>
+							<div id="<%=store%>">
+								<a href="store.jsp">
 								<div id="page">
-									<img src="./img/main/足迹.png">&nbsp;&nbsp;<%="浏览历史" %>&nbsp;&nbsp;&nbsp;&nbsp;
-									<div id="page-list">
-									
-									<% String[] productName ={"商品名称1","商品名称2","商品名称3","商品名称4"}; %>
-										<!-- 此处后期用标签循环语句优化 -->
-										<div><a href=<%="（传入商品地址）" %>>&nbsp;<img src=<%="./img/main/足迹.png" %>>&nbsp;&nbsp;<%=productName[0] %>&nbsp;</a></div>
-										<div><a href=<%="（传入商品地址）" %>>&nbsp;<img src=<%="./img/main/足迹.png" %>>&nbsp;&nbsp;<%=productName[1] %>&nbsp;</a></div>
-										<div><a href=<%="（传入商品地址）" %>>&nbsp;<img src=<%="./img/main/足迹.png" %>>&nbsp;&nbsp;<%=productName[2] %>&nbsp;</a></div>
-										<div><a href=<%="（传入商品地址）" %>>&nbsp;<img src=<%="./img/main/足迹.png" %>>&nbsp;&nbsp;<%=productName[3] %>&nbsp;</a></div>
-
-									</div>
+									<img src="./img/main/足迹.png">&nbsp;&nbsp;<%="我的店铺"%>&nbsp;&nbsp;&nbsp;&nbsp;
 								</div>
+								</a>
 							</div>
 						</form>
 					</div>
@@ -240,7 +250,9 @@
 								<div id="d1">
 								
 								<!-- 通过Product传入href和src -->
-								<% Goods[] show; %>
+								<%
+									Product[] show;
+								%>
 								
 									<a href="product_show.jsp" value="111"><img src=".\img\main\足迹.png" class="imgL active"></a>
 									<a href="product_show.jsp"><img src="./img/bg.gif" class="imgL"></a>

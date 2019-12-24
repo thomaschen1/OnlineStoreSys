@@ -29,10 +29,7 @@
      		User user=new User();
      		user.setPhonenumber(request.getParameter("phonenumber"));
      		user.setPassword(request.getParameter("password"));
-     		user.setNickname("no");
-     		user.setName("no");
-     		user.setSex(null);
-     		user.setBirthday("");
+     		
      		
      %>
      <jsp:useBean id="bean" class="cn.thomaschen.service.UserBean" scope="page">

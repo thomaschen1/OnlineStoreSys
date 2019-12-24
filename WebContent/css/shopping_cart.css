@@ -16,3 +16,19 @@
 	height: 396px;
 	box-shadow: 0px 0px 15px yellow;
 }
+
+#pro_list table th{
+	border:1px solid black;
+	width:200px;
+	margin-left: 20px;
+}
+
+#pro_list table{
+	width:1213ps;
+	border:1px solid black;
+}
+
+#pro_list table tbody td{
+	border:1px solid black;
+	margin-left: 20px;
+}

@@ -76,9 +76,9 @@
 						<%
 							for (int i = 0; i < 5; i++) {
 						%><tr>
-							<td align="center" style="width: 50px;height: 50px">
+							<td align="center" style="width: 100px;height: 100px">
 								<div class="product_img">
-									<img alt="" src="" style="width: 50px;height: 50px">
+									<img alt="" src="" style="width: 100px;height: 100px">
 								</div>
 							</td>
 							<td align="center"><%="商品名称"%></td>
@@ -86,8 +86,8 @@
 							<td align="center"><%="单价"%></td>
 
 							<td align="center"><%="数量"%></td>
-							<td align="center"><%="总额"%></a></td>
-							<td align="center"><%="操作"%></a></td>
+							<td align="center"><%="总额"%></td>
+							<td align="center"><button>编辑</button><button>删除</button></td>
 							<%
 								
 							%>

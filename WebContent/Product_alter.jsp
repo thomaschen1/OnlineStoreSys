@@ -1,8 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
 <head>
+
 <meta charset="UTF-8">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/top1.css" />
 <link rel="stylesheet"
@@ -51,7 +53,7 @@
 	<div id="box">
 
 		<div id="little_box">
-			<form action="UploadServlet" method="post" enctype="multipart/form-data">
+			<form action="/UploadServlet" method="post" enctype="multipart/form-data">
 				<div id="pro_img"
 					style="background: #ffffff; background-repeat: no-repeat;" align="center">
 					<img id="showImg" alt="./img/alter/add.jpg" src="./img/alter/add.jpg" style="width: 100%;height: 100%">

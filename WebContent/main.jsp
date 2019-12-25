@@ -44,8 +44,6 @@
 			<div id="whith">
 				<div id="top1_left">
 					Hi,欢迎来到网店购物&nbsp;&nbsp;
-					<%if(user==null){%>
-					Hi,欢迎来到网店购物&nbsp;&nbsp;
 					<%
 						if(user==null){
 					%>

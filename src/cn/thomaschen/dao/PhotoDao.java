@@ -13,7 +13,6 @@ import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 
-@WebService(name="/UploadServlet")
 public class PhotoDao {
 	/**
 	* 这个函数的功能是获取前端的数据集合，将文件打包成File以便后续操作

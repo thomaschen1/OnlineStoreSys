@@ -9,6 +9,11 @@
 	height:525px;
 	width: 525px;
 }
+#showImg{
+	align-content: center;
+	max-width: 525px;
+	max-height: 525px;
+}
 
 #pro_massage{
 	position:relative;

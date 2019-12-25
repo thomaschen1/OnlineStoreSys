@@ -51,39 +51,66 @@
 	<div id="box">
 
 		<div id="little_box">
-			<div id="pro_img" style="background: url('./img/alter/add.jpg');background-repeat: no-repeat;">
-				<!-- 商品照片 -->
-				
-			</div>
+			<form action="UploadServlet" method="post" enctype="multipart/form-data">
+				<div id="pro_img"
+					style="background: #ffffff; background-repeat: no-repeat;" align="center">
+					<img id="showImg" alt="./img/alter/add.jpg" src="./img/alter/add.jpg" style="width: 100%;height: 100%">
+					<input type="file" name="file" style="width: 525px;height:525px;position: relative;top: -525px;opacity: 0;" 
+							onchange="upload(this)">
+				<script type="text/javascript">
+				function upload(obj){
+			        //获取展示图片的区域
+			        var img = document.getElementById("showImg"); 
+			        //获取文件对象
+			        let file = obj.files[0];
+			        //获取文件阅读器
+			        let reader = new FileReader();
+			        reader.readAsDataURL(file);
+			        reader.onload = function(){
+			            //给img的src设置图片url
+			            img.setAttribute("src", this.result);
+			        }
+			    }
 
-			<div id="pro_massage">
-				<form action="">
+				</script>
+				</div>
+			
+
+				<div id="pro_massage">
+
 					<table>
 						<tr id="pro_name">
 							<!-- 商品名称 -->
 							<td><div class="tips1">商品名称&nbsp;:</div></td>
-							<td><div id="massage_name" class="massage"><input type="text"></div></td>
+							<td><div id="massage_name" class="massage">
+									<input type="text">
+								</div></td>
 
 						</tr>
 						<tr id="pro_describ">
 							<!-- 商品介绍 -->
 							<td><div class="tips1">商品介绍&nbsp;:</div></td>
-							<td><div id="massage_describ" class="massage"><textarea style="overflow-x:hidden;width: 300px;height: 50px"></textarea></div></td>
+							<td><div id="massage_describ" class="massage">
+									<textarea
+										style="overflow-x: hidden; width: 300px; height: 50px"></textarea>
+								</div></td>
 
 						</tr>
 						<tr id="pro_price">
 							<!-- 商品价格：需要随样式的不同而改变 -->
 							<td><div class="tips1">价格(元)&nbsp;:</div></td>
-							<td><div id="massage_price" class="massage"><input type="number"></div></td>
+							<td><div id="massage_price" class="massage">
+									<input type="number">
+								</div></td>
 						</tr>
 						<tr id="pro_style">
 							<!-- 商品样式 -->
 							<td><div class="tips1">商品规格&nbsp;:</div></td>
 							<td><div id="massage_style" class="massage">
-									<button type="button" class="style_button" 
-									style="background: url('./img/alter/add.jpg') ;background-size: cover;" 
-									name=<%="Product.getStyle()"%>
-										onclick="selectStyle(this)" id="choice"></button>
+									<button type="button" class="style_button"
+										style="background: url('./img/alter/add.jpg'); background-size: cover;"
+										name=<%="Product.getStyle()"%> onclick="selectStyle(this)"
+										id="choice"></button>
 
 								</div></td>
 						</tr>
@@ -91,27 +118,27 @@
 							<!-- 商品数量 -->
 							<td><div class="tips1">商品数量&nbsp;:</div></td>
 							<td><div id="massage_amount" class="massage">
-									<span id="amount"><input type="number" style="height: 20px;width: 100px;"></span>
-	
+									<span id="amount"><input type="number"
+										style="height: 20px; width: 100px;"></span>
+
 								</div></td>
 						</tr>
 						<tr>
 							<td></td>
-							<td><button type="submit" id="add_to_car" >保存</button>
+							<td><button type="submit" id="add_to_car">保存</button>
 								<button id="buy" onclick="">退出</button></td>
 						</tr>
 					</table>
-				</form>
-			</div>
 
+				</div>
+			</form>
 		</div>
 	</div>
 	<script type="text/javascript">
 		function selectStyle(select) {
-			document.getElementById('choice').id="";
-			select.id="choice";
+			document.getElementById('choice').id = "";
+			select.id = "choice";
 		}
-		
 	</script>
 
 </body>

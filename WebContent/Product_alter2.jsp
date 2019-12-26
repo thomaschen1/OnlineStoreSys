@@ -124,7 +124,12 @@
  				product.setPrice(Double.parseDouble(unitprice));
  				product.setSperification(sperification);
  				product.setAmount(Integer.parseInt(number));
- 				product.setImg(request.getAttribute("filename").toString());%>
+ 				if(request.getAttribute("filename")!=null){
+ 					product.setImg(request.getAttribute("filename").toString());
+ 				}else{
+ 					product.setImg(product.getImg());
+ 				}
+ 				%>
  				 <jsp:useBean id="productbean" class="cn.thomaschen.service.ProductBean" scope="page">
  			     	<jsp:setProperty name="productbean" property="product" value="<%=product%>" />
  			     	<jsp:setProperty name="productbean" property="flag" value="update"/>
@@ -196,8 +201,10 @@
 							<!-- 商品介绍 -->
 							<td><div class="tips1">商品介绍&nbsp;:</div></td>
 							<td><div id="massage_describ" class="massage">
-							<textarea name="productIntrod" style="overflow-x:hidden;width: 300px;height: 50px" value="<%=product.getDescrib()%>">
-							</textarea></div></td>
+							<%System.out.print(product.getDescrib()) ;%>
+							<textarea name="productIntrod" style="overflow-x:hidden;width: 300px;height: 50px;" 
+								value="<%=product.getDescrib()%>"><%=product.getDescrib()%></textarea>
+							</div></td>
 
 						</tr>
 						<tr id="pro_price">

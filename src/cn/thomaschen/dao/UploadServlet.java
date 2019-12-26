@@ -1,6 +1,7 @@
 package cn.thomaschen.dao;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -34,7 +35,7 @@ public class UploadServlet extends HttpServlet {
      * @throws IOException if an error occurred
      */
     public void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException ,FileNotFoundException{
 
         
         //得到上传文件的保存目录，将上传的文件放在webRoot目录下（但是一般为了安全放在WEB-INF目录下，不允许外界直接访问，保证上传的安全）
@@ -74,7 +75,11 @@ public class UploadServlet extends HttpServlet {
                     String value = item.getString("UTF-8");//value = new String(value.getBytes("iso8859-1"),"UTF-8");
                     request.setAttribute(name, value);
                     System.out.println("(非文件上传)"+name + " = " + value);
-                }else{    //如果表单中提交的是上传文件
+                }else if(!item.isFormField()&&item.getSize()==0){
+                	continue;
+                }
+                
+                else{    //如果表单中提交的是上传文件
                     //获得上传的文件名称
                     String filename = item.getName();
                     System.out.println(filename);

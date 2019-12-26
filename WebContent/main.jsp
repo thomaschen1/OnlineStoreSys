@@ -1,7 +1,8 @@
 <%@page import="javax.swing.JOptionPane"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ page import="cn.thomaschen.entity.Product,cn.thomaschen.entity.User" %>
+<%@ page import="java.util.*,java.text.SimpleDateFormat,cn.thomaschen.service.ProductBean,cn.thomaschen.entity.Product"%>
+<%@ page import="cn.thomaschen.entity.Product,cn.thomaschen.entity.User,java.lang.*"%>
     
 <!DOCTYPE html>
 <html>
@@ -16,25 +17,21 @@
 	User user=new User();
 	String phonenumber=request.getParameter("phonenumber");
 	String password=request.getParameter("password");
-	if(phonenumber!=null&&password!=null){
+	boolean order=Boolean.parseBoolean(request.getParameter("order"));
+	if(order){
+		user=null;
+	}
+	else if(phonenumber!=null&&password!=null){
 		user.setPhonenumber(phonenumber);
-		user.setPassword(password);
-%>
+		user.setPassword(password);%>
 		<jsp:useBean id="bean" class="cn.thomaschen.service.UserBean" scope="page"/>
-		<%
-			user=bean.judge(user);
-				if(user==null){
-		%>
+		<%user=bean.judge(user);
+				if(user==null){%>
 		<script type="text/javascript" language="javascript">
 		alert("密码错误");  
 		</script>	
-		<%
-				}
-					}else{
-			%>
-		<%
-			user=(User)session.getAttribute("user");}
-		%>
+		<%}}
+	else{user=(User)session.getAttribute("user");}%>
 <body onload="a()">
 
 		<span id="bg"><img alt="" src="./img/bg.gif"></span>
@@ -43,9 +40,9 @@
 			<!-- 最上面的信息，显示登录注册，可在此切换到登录注册画面-->
 			<div id="whith">
 				<div id="top1_left">
-					Hi,欢迎来到网店购物&nbsp;&nbsp;
+					<a href="main.jsp">回到主页&nbsp;&nbsp;</a>
 					<%
-						if(user==null){
+				if(user==null){
 					%>
 					<span id="span1"><a  id="into">请登录</a>
 					
@@ -73,17 +70,17 @@
 					<%
 						}
 											else{
-											session.setAttribute("user", user);
+												session.setAttribute("user", user);
 					%>
 					<span id="span1"><a href="userMassage.jsp"><%=user.getPhonenumber()%></a>
+					<div id="top1_right">
+					<a href="userMassage.jsp">个人中心</a>|
+					<a href="shopping_cart.jsp">购物车</a>|
+					<a href="order。jsp">订单管理</a>
+				</div>
 					<%
 						}
 					%>				
-				</div>
-				<div id="top1_right">
-					<a href="userMassage.jsp">个人中心</a>|
-					<a href="shopping。jsp">购物车</a>|
-					<a href="order。jsp">订单管理</a>
 				</div>
 			</div>
 
@@ -93,7 +90,12 @@
 			<div id="little_box">
 				<div id="top2">
 					<!-- 搜索栏 -->
-
+					<%
+					ProductBean productbean=new ProductBean();
+					List<Product> products=productbean.findData();
+					session.setAttribute("products", products);
+					Product product=new Product();
+					%>
 					<div id="top2_left">
 						<img src="./img/main/logo.gif" id="logo">
 					</div>
@@ -121,6 +123,7 @@
 							<div id="<%=store%>">
 								<a href="store.jsp">
 								<div id="page">
+								<%session.setAttribute("user", user);%>
 									<img src="./img/main/足迹.png">&nbsp;&nbsp;<%="我的店铺"%>&nbsp;&nbsp;&nbsp;&nbsp;
 								</div>
 								</a>
@@ -340,7 +343,8 @@
 
 							</div>
 						</div> -->
-						<a href="index.html"><img src="img/星光logo.png" class="img"></a>
+						
+						<a href="product_show.jsp"><img src="" class="img"></a>
 						<a href="index.html"><img src="img/LOGO%20(7).png" class="img"></a>
 						<a href="index.html"><img src="img/LOGO%20(5).png" class="img"></a>
 					</div>
@@ -359,46 +363,21 @@
 						<a href="">查看全部&nbsp;&nbsp;↓</a>
 					</div>
 				</div>
-				<div id="top5">
+				<div id="top5" style="height: auto;overflow: auto;margin-bottom: 50px;">
 					<!-- 热门商品兰 -->
 					<!-- 通过Product类传入href、img、商品名称、价格等 -->
-
-					<a href="">
-						<div id=""><img src="">
-							<p>水花</p>
-							<div class="buy">立刻查看</div>
+					
+					
+				<%
+				for(Product pro:products){%>
+					<a href="product_show.jsp?id=<%=pro.getId()%>">
+						<div id="" ><img src="./img/Upload/<%=pro.getImg()%>">
+							<p><%=pro.getName()%></p>
+							<div class="buy">点击查看</div>
 						</div>
 					</a>
-					<a href="">
-						<div id=""><img src="">
-							<p>翅膀</p>
-							<div class="buy">立刻查看</div>
-						</div>
-					</a>
-					<a href="">
-						<div id=""><img src="">
-							<p>禅意</p>
-							<div class="buy">立刻查看</div>
-						</div>
-					</a>
-					<a href="">
-						<div id=""><img src="">
-							<p>流光</p>
-							<div class="buy">立刻查看</div>
-						</div>
-					</a>
-					<a href="">
-						<div id=""><img src="">
-							<p>花纹</p>
-							<div class="buy">立刻查看</div>
-						</div>
-					</a>
-					<a href="">
-						<div id=""><img src="">
-							<p>小猫咪</p>
-							<div class="buy">立刻查看</div>
-						</div>
-					</a>
+					<%}
+					 %>
 				</div>
 			</div>
 		</div>

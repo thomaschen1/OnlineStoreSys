@@ -432,7 +432,7 @@ form #buttum {
 	text-align: center;
 	font-size: 18px;
 	border-bottom: 1px solid #eeeeee;
-	color: #FFFACD;
+	color: #aaaaaa;
 }
 #top5 div img{
 	height: 265px;
@@ -446,8 +446,8 @@ form #buttum {
 	border-radius: 3px;
 	padding-top: 7px;
 	font-size: 13px;
-	color: #FFFFFF;
-	border: 1px solid #FFFFFF;
+	color: #aaaaaa;
+	border: 1px solid #aaaaaa;
 	margin: 20px 0px 0px 33px;
 }
 #top5 div:hover .buy{

@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.List;
 
 public class User implements Serializable{
-	private static int id=0;
+	private int id;
 	private String phonenumber;
 	private String password;
 	private String name;
@@ -13,23 +13,10 @@ public class User implements Serializable{
 	private String birthday;
 	private String area;
 	private String postbox;
-	private List<Product> Product;
-	
-	public User() {
-	
-	}
-	public User(String name, String nickname, String sex, String birthday) {
+	public User(int id, String phonenumber, String password, String name, String nickname, String sex, String birthday,
+			String area, String postbox) {
 		super();
-		this.name = name;
-		this.nickname = nickname;
-		this.sex = sex;
-		this.birthday = birthday;
-	}
-	
-	public User(String phonenumber, String password, String name, String nickname, String sex, String birthday,
-			String area, String postbox, List<Product> Product) {
-		super();
-		this.id = id++;
+		this.id = id;
 		this.phonenumber = phonenumber;
 		this.password = password;
 		this.name = name;
@@ -38,22 +25,26 @@ public class User implements Serializable{
 		this.birthday = birthday;
 		this.area = area;
 		this.postbox = postbox;
-		this.Product = Product;
+		//this.goods = goods;
 	}
+	public User() {
+		
+	}
+	//private List<Goods> goods;
+	
 	public String getNickname() {
-		return nickname;
+	return nickname;
 	}
+	
 	public void setNickname(String nickname) {
 		this.nickname = nickname;
 	}
-	
-	public List<Product> getGoods() {
-		return Product;
+/*	public List<Goods> getGoods() {
+		return goods;
 	}
-	public void setGoods(List<Product> Product) {
-		this.Product = Product;
-	}
-	
+	public void setGoods(List<Goods> goods) {
+		this.goods = goods;
+	}*/
 	public String getPostbox() {
 		return postbox;
 	}
@@ -87,7 +78,9 @@ public class User implements Serializable{
 	public int getId() {
 		return id;
 	}
-	
+	public void setId(int id) {
+		this.id = id;
+	}
 	public String getName() {
 		return name;
 	}

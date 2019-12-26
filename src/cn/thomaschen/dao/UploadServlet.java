@@ -7,7 +7,6 @@ import java.io.InputStream;
 import java.io.PrintWriter;
 import java.util.List;
 
-import javax.jws.WebService;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -15,11 +14,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.fileupload.FileItem;
+import org.apache.commons.fileupload.RequestContext;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
+
+import com.mysql.cj.Session;
+
+import cn.thomaschen.entity.Product;
 @WebServlet("/UploadServlet")
 public class UploadServlet extends HttpServlet {
-
     /**
      * The doPost method of the servlet. <br>
      *
@@ -35,8 +38,8 @@ public class UploadServlet extends HttpServlet {
 
         
         //得到上传文件的保存目录，将上传的文件放在webRoot目录下（但是一般为了安全放在WEB-INF目录下，不允许外界直接访问，保证上传的安全）
-        String path = this.getServletContext().getRealPath("/img/Upload");
-        System.out.print(path);
+        String path = "C:\\Users\\80504\\git\\OnlineStoreSys\\WebContent\\img\\Upload";
+        System.out.println("路径："+path);
         File file = new File(path);
         
         //判断上传文件的保存目录是否存在
@@ -69,17 +72,20 @@ public class UploadServlet extends HttpServlet {
                     String name = item.getFieldName();
                     //解决普通输入项中中文乱码问题
                     String value = item.getString("UTF-8");//value = new String(value.getBytes("iso8859-1"),"UTF-8");
-                    System.out.println(name + " = " + value);
+                    request.setAttribute(name, value);
+                    System.out.println("(非文件上传)"+name + " = " + value);
                 }else{    //如果表单中提交的是上传文件
                     //获得上传的文件名称
                     String filename = item.getName();
                     System.out.println(filename);
+                    request.setAttribute("filename", filename);
                     if(filename == null || filename.trim().equals(" ")){
                         continue;
                     }
                     //注意：不同的浏览器提交的文件名称是不一样的，有些浏览器提交的文件会带有路径，如“D:\\project\WebRoot\hello.jsp”，有一些是单纯的文件名：hello.jsp
                     //去掉获取到文件名中的路径名，保留单纯的文件名
                     filename = filename.substring(filename.lastIndexOf("\\") + 1);
+                    
                     //获取item中的上传文件的输入流
                     InputStream in = item.getInputStream();
                     //创建一个文件输入流
@@ -111,8 +117,47 @@ public class UploadServlet extends HttpServlet {
         }
         
         request.setAttribute(message, message);
-        request.getRequestDispatcher("main.jsp").forward(request, response);
+        String page=(String)request.getSession().getAttribute("page");
+        request.getRequestDispatcher(page).forward(request, response);
         
+    }
+   /* private void up(String name,String value,HttpServletRequest request, HttpServletResponse response) {
+    	int productid=0;
+		if(request.getAttribute("id")!=null){
+		productid=Integer.parseInt(request.getParameter("id"));
+		}
+		
+ 		if(productname!=null&& !productname.isEmpty()&&
+ 				productIntrod !=null&& !productIntrod.isEmpty()&&
+ 				unitprice!=null&&
+ 				sperification!=null&&!sperification.isEmpty()&&
+ 				number!=null){
+ 				product.setName(productname);
+ 				product.setDescrib(productIntrod);
+ 				product.setPrice(Double.parseDouble(unitprice));
+ 				product.setSperification(sperification);
+ 				product.setAmount(Integer.parseInt(number));
+ 				product.setImg(request.getAttribute("filename").toString());%>
+ 	<jsp:useBean id="productbean" class="cn.thomaschen.service.ProductBean" scope="page">
+     	<jsp:setProperty name="productbean" property="product" value="<%=product%>" />
+     	<jsp:setProperty name="productbean" property="flag" value="insert"/>
+     </jsp:useBean>
+	
+		System.out.println("成功刷新");
+		productbean.updateData();
+		product.setId(0);
+		productbean.setProduct(product);
+		List<Product> products=productbean.findData();
+		session.setAttribute("products", products);
+	
+	} 
+    */
+    
+    public String toString(String path,String filename)
+    {
+    	String src=path+filename;
+		return src;
+    	
     }
 
 }

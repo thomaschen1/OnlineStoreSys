@@ -31,8 +31,10 @@ public class UserBean implements Serializable{
 		List<User> users=new ArrayList<User>();
 		String sql="";
 		Object[] params=new Object[1];
-		if(user!=null&&user.getId()>0) 
+		if(user!=null&&user.getId()>0) {
 		sql="select * from user where id=?";
+		params[0]=user.getId();
+		}
 		else {
 		sql="select * from user";
 		params=new Object[0];
@@ -44,6 +46,7 @@ public class UserBean implements Serializable{
 				//rs.next时 游标最先是指向第一条记录前的位置
 				//所以第一次rs.next后 游标指向的正好是第一条记录（如果有的话）
 				User er=new User();
+				er.setId(rs.getInt("id"));
 				er.setName(rs.getString("name"));
 				er.setPhonenumber(rs.getString("phonenumber"));
 				er.setPassword(rs.getString("password"));

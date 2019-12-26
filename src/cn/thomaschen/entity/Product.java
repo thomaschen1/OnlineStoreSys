@@ -4,16 +4,16 @@ import cn.thomaschen.entity.Img;
 
 public class Product {
 	private int id;
-	private String name;
-	private double price;
-	private String describ;
-	private String sperification;
-	private Img img;
-	private int amount;
+	private String name;//名字
+	private double price;//价格
+	private String describ;//描述
+	private String sperification;//规格
+	private String img;//图片
+	private int amount;//数量
 	public Product(){
 		
 	}
-	public Product(int id, String name, double price, String describ, Img img, int amount,String sperification) {
+	public Product(int id, String name, double price, String describ, String img, int amount,String sperification) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -47,10 +47,10 @@ public class Product {
 	public void setDescrib(String describ) {
 		this.describ = describ;
 	}
-	public Img getImg() {
+	public String getImg() {
 		return img;
 	}
-	public void setImg(Img img) {
+	public void setImg(String img) {
 		this.img = img;
 	}
 	
